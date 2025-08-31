@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<style>
+
+    .card {
+        transition: all 0.3s ease-in-out;
+    }
+
+    .card:hover {
+        transform: translateX(-8px) scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+    }
+
+    body {
+        background-image: url('../static/bannercard.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        position: relative;
+        z-index: 0;
+        font-family: 'Cormorant Garamond', serif;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: -1;
+    }
+
+    h3 {
+        font-size: 40px;
+        height: 4rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    h5 {
+        text-align: justify;
+        margin-left: 2rem;
+    }
+
+    li {
+        list-style: none;
+        margin-bottom: 1rem;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .message {
+        background-image: url('../static/banners/ban1.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        background-position-y: top;
+    }
+    .banner{
+        background-image: url('../static/banners/excite.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        height: 600px
+    }
+</style>
+
+<body>
+    <!-- navigation -->
+    <nav class="navbar navbar-expand-lg bg-primary px-5">
+        <div class="container-fluid">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link text-light" href="{% url 'register' %}">Register</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="{% url 'login' %}">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- banner -->
+    <div class="banner position-relative">
+        <!-- <img src="" class="img-fluid w-100" style="height: 600px; object-fit: cover;"> -->
+        <div class="text position-absolute top-50 start-0 translate-middle-y ms-5 text-light">
+            <h1 class="display-4 fw-bold">Timeless Fashion for the Modern Wardrobe</h1>
+            <p class="fs-5">Discover timeless fashion for Men, Women, and Kids &#45; crafted for comfort,
+                designed for confidence.</p>
+        </div>
+    </div>
+
+    <!-- product card -->
+
+    <div class="container-fluid bg-light" style="padding: 6rem;">
+        <div class="header">
+            <h3 class="text-align-center text-dark text-center">Trending Products</h3>
+        </div>
+        <div class="row" style="height: 400px;">
+            <div class="col-md-3" style="height:360px;">
+                <div class="card shadow" style="border: none; height: 370px">
+                    <img src="../static/banners/boottle.jpg " class="card-img-top w-100 h-100">
+                    <div class="card-body text-center">
+                        <a style="text-decoration: none; color: #000000;" href="{% url 'product' %}">Bottle</a>
+                        <p>₹400</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3" style="height:360px;">
+                <div class="card shadow" style="border: none; height: 370px">
+                    <img src="../static/creame.jpg" class="card-img-top w-100 h-100">
+                    <div class="card-body text-center">
+                        <a style="text-decoration: none; color: #000000;" href="{% url 'product' %}">Cream</a>
+                        <p>₹400</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3" style="height:360px;">
+                <div class="card shadow" style="border: none; height: 370px">
+                    <img src="../static/perfume.jpg" class="card-img-top w-100 h-100">
+                    <div class="card-body text-center">
+                        <a style="text-decoration: none; color: #000000;" href="{% url 'product' %}">Perfume</a>
+                        <p>₹1000</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3" style="height:360px;">
+                <div class="card shadow" style="border: none; height: 370px">
+                    <img src="../static/bench.jpg" class="card-img-top w-100 h-100">
+                    <div class="card-body text-center">
+                        <a style="text-decoration: none; color: #000000;" href="{% url 'product' %}">Bench</a>
+                        <p>₹700</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- message -->
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-md-6"></div>
+            <div class="col-md-6" style="margin-top: 7rem;">
+                <img src="../static/banners/sit.jpg" style="width: auto; height: 600px;" class="image-msg">
+                <div class="text">
+                    <h2 class="text-light mt-2" style="font-size: 30px;">Explore our Collections now!</h2>
+                    <button class="text-light p-2 mt-2"
+                        style="border: 1px solid #f1f1f1; background-color: transparent;"> <a
+                            style="text-decoration: none; color: #ffffff;" href="{% url 'product' %}">VIEW
+                            COLLECTION</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container-fluid bg-light py-5">
+        <div class="row text-center g-3">
+
+            <div class="col-md-3 p-3">
+                <i class="bi bi-shield-lock fs-1"></i>
+                <p class="fs-5 fw-semibold mt-2">Secure Payments</p>
+                <p class="text-secondary">Shop with confidence knowing that your transactions are safeguarded.</p>
+            </div>
+
+            <div class="col-md-3 p-3">
+                <i class="bi bi-truck fs-1"></i>
+                <p class="fs-5 fw-semibold mt-2">Free Shipping</p>
+                <p class="text-secondary">Shopping with no extra charges – savor the liberty of complimentary shipping on every order.</p>
+            </div>
+
+            <div class="col-md-3 p-3">
+                <i class="bi bi-arrow-repeat fs-1"></i>
+                <p class="fs-5 fw-semibold mt-2">Easy Returns</p>
+                <p class="text-secondary">With our hassle-free Easy Returns, changing your mind has never been more convenient.</p>
+            </div>
+
+            <div class="col-md-3 p-3">
+                <i class="bi bi-box-seam fs-1"></i>
+                <p class="fs-5 fw-semibold mt-2">Order Tracking</p>
+                <p class="text-secondary">Stay in the loop with our Order Tracking feature – from checkout to your doorstep.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!--  message2-->
+    <div class="container-fluid h-100 w-100 message m-0 p-5" style="height: 600px;">
+        <div class="row">
+            <div class="col-md-6"></div>
+            <div class="col-md-6" style="margin-top: 7rem;">
+                <p class="fw-semi-bold text-light text-uppercase">Explore</p>
+                <h1 class="text-light" style="font-size: 45px;">Elevate your wardrobe, embrace timeless style!</h1>
+                <p class="text-light" style="font-size: 18px;">Explore our collections today and experience the joy of
+                    fashion. Shop now for the epitome of chic sophistication!</p>
+                <div class="text">
+                    <button class="text-light p-2 mt-2"
+                        style="border: 1px solid #f1f1f1; background-color: transparent;"> <a
+                            style="text-decoration: none; color: #ffffff;" href="{% url 'product' %}">SHOP NOW</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer top -->
+    <div class=" container-fluid expand-large bg-light text-dark text-center py-3" style="height: 300px">
+        <div class="row">
+            <div class="col-md-3">
+                <h5 class="mt-2">Menu</h5>
+                <ul>
+                    <li>Home</li>
+                    <li>Shop</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5 class="mt-2">Categories</h5>
+                <ul>
+                    <li>Casual</li>
+                    <li> Work & Office</li>
+                    <li>Activewear</li>
+                    <li>Evening Dresses</li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5 class="mt-2">Resources</h5>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                    <li>Pinterest</li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5 class="mt-2">Social Media</h5>
+                <ul>
+                    <li>Contact Support</li>
+                    <li>FAQ</li>
+                    <li>Live Chat</li>
+                    <li>Returns</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer class="bg-dark text-light text-center py-3">
+        <p class="mb-0">© 2025 Fashion Store. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
